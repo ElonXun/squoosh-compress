@@ -11,6 +11,9 @@ import typescript from 'rollup-plugin-typescript2'
 
 const extensions = ['.js', '.ts'];
 
+// 区分开发环境
+const isDev = process.env.NODE_ENV === 'development';
+console.log('fmn test isDev', isDev, process.env.NODE_ENV)
 export default {
   input: 'lib/index.ts', // 入口文件
   output: {
