@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./dist/index.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="file"
+        @change="onchange"
+        ref="fileInput"
+      />
+
+    </div>
+    <!-- built files will be auto injected -->
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          
+        },
+        methods: {
+          onchange:async function(){
+            console.log("fmn test file", this.$refs.fileInput.files[0]);
+            const file = this.$refs.fileInput.files[0];
+
+            const data = await window.compress.compress(
+              file,
+              {
+                type: "browser-png",
+                // options: {
+                //   quality: 0.75
+                // }
+              },
+              file.name
+            );
+            console.log('fmn test data', data)
+          }
+        },
+        mounted() {
+          
+        },
+      })
+    </script>
+  </body>
+</html>

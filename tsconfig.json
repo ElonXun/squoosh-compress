@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "outDir": "./dist",
+        "strict": true,
+        "importHelpers": false,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        // "lib": ["es6"]//编译需要的库文件，例如你指定的 target 是 ES5，但是在代码中使用了 ES6 特性，就需要在 lib 中加上 ES6
+        "lib": [
+            "es6",
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+    },
+    "include": ["lib"],
+    "exclude": ["node_modules", "**/__tests__/*"]
+}
