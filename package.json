@@ -1,6 +1,6 @@
 {
   "name": "squoosh-compress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "compress image use squoosh",
   "main": "dist/index.cjs.js",
   "browser": "dist/index.esm.js",
