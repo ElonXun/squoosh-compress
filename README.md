@@ -1,2 +1,2 @@
 # squoosh-compress
-compress image use squoosh
+npm i squoosh-compress
