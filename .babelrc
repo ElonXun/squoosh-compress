@@ -2,7 +2,11 @@
     "presets": [
       ["@babel/preset-env", {
         "useBuiltIns": "usage",
-        "corejs": 3
+        "corejs": 2,
+        "targets": {
+          "browsers": "> 1%, IE 11, not op_mini all, not dead",
+          "node": 8
+        }
       }],
       "@babel/preset-typescript"
     ],
