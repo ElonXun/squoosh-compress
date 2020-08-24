@@ -2,6 +2,8 @@
 
 <a href="https://www.npmjs.com/package/squoosh-compress"><img src="https://img.shields.io/npm/v/squoosh-compress.svg" alt="Version"></a>
 
+squoosh-compress 是一个前端图片压缩库，适用于react、vue、angular等，核心压缩原理来自google的开源图片压缩方案squoosh
+
 ## 安装
 ```
 npm i squoosh-compress --save
@@ -59,3 +61,6 @@ const data2 = await window.compress.compress(
     file.name
   );
 ```
+
+
+[![Edit cranky-elgamal-5tu8u](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/cranky-elgamal-5tu8u?fontsize=14&hidenavigation=1&theme=dark)
