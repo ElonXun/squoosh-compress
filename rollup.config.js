@@ -16,12 +16,22 @@ const isDev = process.env.NODE_ENV === 'development';
 console.log('fmn test isDev', isDev, process.env.NODE_ENV)
 export default {
   input: 'lib/index.ts', // 入口文件
-  output: {
+  output: 
+  isDev? {
     format: 'umd',
     file: 'dist/index.js', // 打包后输出文件
     name: 'compress',  // 打包后的内容会挂载到window，name就是挂载到window的名称
     sourcemap: true // 代码调试  开发环境填true
-  },
+  } : [
+    {
+      format: 'esm',
+      file: 'dist/index.esm.js', // 打包后输出文件
+    },
+    {
+      format: 'cjs',
+      file: 'dist/index.cjs.js', // 打包后输出文件
+    }
+  ],
   plugins: [
     // 可以 import node_modules 中的模
     nodeResolve(),
@@ -36,11 +46,11 @@ export default {
         extensions,
     }),
     // 压缩代码
-    terser(),
+    isDev && terser(),
     // 热更新 默认监听根文件夹
-    livereload(),
+    isDev && livereload(),
     // 本地服务器
-    serve({
+    isDev && serve({
       open: true, // 自动打开页面
       port: 8000,
       openPage: '/index.html', // 打开的页面
