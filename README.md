@@ -50,7 +50,7 @@ const data = await compress(
     file.name
 );
 
-const data2 = await window.compress.compress(
+const data2 = await compress(
     file,
     {
       type: "browser-jpeg",
